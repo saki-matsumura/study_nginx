@@ -17,19 +17,10 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "net-smtp"
 gem "net-imap"
 gem "net-pop"
-gem "faker"  # 移動：Herokuでフェイカーを使用できるようにする
 
-# 追加：enum用
-gem 'enum_help'
-
-# 追加：ページテーション
-gem 'kaminari'
-
-# 追加：ログインシステム
-gem 'bcrypt'
-
-# 追加：envファイル
-gem 'dotenv-rails'
+# 追加：nginx用
+gem 'unicorn'
+gem 'unicorn-rails'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -37,10 +28,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "spring-commands-rspec"
   gem "factory_bot_rails"
-  # gem "faker"
   gem "launchy"
-  # テストデバッグ
-  # gem "pry-rails"
+  gem "pry-rails"
 end
 
 group :development do
@@ -48,8 +37,6 @@ group :development do
   # gem "rack-mini-profiler", "~> 2.0"
   gem "listen", "~> 3.3"
   gem "spring"
-  # 追加：デバッグ用
-  gem "pry-rails"
 end
 
 group :test do
